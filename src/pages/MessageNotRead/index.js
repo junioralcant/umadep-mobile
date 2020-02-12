@@ -11,7 +11,7 @@ import {
 import LinearGradient from 'react-native-linear-gradient';
 import Icon from 'react-native-vector-icons/AntDesign';
 
-import api from '../Services/api';
+import api from '../../Services/api';
 
 export default function MessageNoteRead({navigation}) {
   const [messages, setMessages] = useState([]);

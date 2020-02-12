@@ -10,7 +10,7 @@ import {
 
 import LinearGradient from 'react-native-linear-gradient';
 
-import api from '../Services/api';
+import api from '../../Services/api';
 
 import {Content} from './styles';
 
