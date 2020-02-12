@@ -66,9 +66,11 @@ export default function MessageRead({navigation}) {
               return (
                 <View key={message._id} style={styles.boxDadosMessage}>
                   <View style={styles.message}>
-                    <Text>De: {message.sentBy}</Text>
-                    <Text>Para: {message.receivedBy}</Text>
-                    <Text>{message.message}</Text>
+                    <Text style={styles.textMessage}>De: {message.sentBy}</Text>
+                    <Text style={styles.textMessage}>
+                      Para: {message.receivedBy}
+                    </Text>
+                    <Text style={styles.textMessage}>{message.message}</Text>
                   </View>
                 </View>
               );
@@ -127,5 +129,9 @@ const styles = StyleSheet.create({
   },
   message: {
     maxWidth: 330,
+  },
+  textMessage: {
+    color: '#000',
+    fontWeight: 'bold',
   },
 });
