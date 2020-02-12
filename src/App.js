@@ -1,8 +1,11 @@
 import React from 'react';
-import {StatusBar, Text} from 'react-native';
-
+import CodePush from 'react-native-code-push';
 import Routes from './routes';
 
-export default function App() {
+const App = () => {
   return <Routes />;
-}
+};
+
+export default CodePush({
+  checkFrequency: CodePush.CheckFrequency.ON_APP_RESUME,
+})(App);
