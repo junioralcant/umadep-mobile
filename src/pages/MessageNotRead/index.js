@@ -7,6 +7,7 @@ import {
   TouchableOpacity,
   ScrollView,
   ActivityIndicator,
+  Alert,
 } from 'react-native';
 import LinearGradient from 'react-native-linear-gradient';
 import Icon from 'react-native-vector-icons/AntDesign';
@@ -19,10 +20,14 @@ export default function MessageNoteRead({navigation}) {
 
   useEffect(() => {
     async function loadMessages() {
-      setLoading(true);
-      const response = await api.get('/messags');
-      setMessages(response.data);
-      setLoading(false);
+      try {
+        setLoading(true);
+        const response = await api.get('/messags');
+        setMessages(response.data);
+        setLoading(false);
+      } catch (error) {
+        console.log(error.response.data.error);
+      }
     }
 
     loadMessages();
