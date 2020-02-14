@@ -1,13 +1,7 @@
 import React, {useState, useEffect} from 'react';
 import {NavigationActions} from 'react-navigation';
 import AsyncStorage from '@react-native-community/async-storage';
-import {
-  View,
-  Text,
-  StyleSheet,
-  TextInput,
-  TouchableOpacity,
-} from 'react-native';
+import {Text, StyleSheet, TextInput, TouchableOpacity} from 'react-native';
 import LinearGradient from 'react-native-linear-gradient';
 import api from '../../Services/api';
 

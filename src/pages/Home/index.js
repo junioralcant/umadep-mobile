@@ -5,7 +5,6 @@ import {
   TextInput,
   TouchableOpacity,
   Alert,
-  KeyboardAvoidingView,
 } from 'react-native';
 
 import LinearGradient from 'react-native-linear-gradient';
@@ -31,11 +30,8 @@ export default function Home({navigation}) {
       });
 
       Alert.alert('Recadinho enviado!');
-      setSentBy(''), setReceivedBy(''), setMessage('');
     }
   }
-
-  console.log(sentBy);
 
   return (
     <LinearGradient

@@ -1,4 +1,3 @@
 <resources>
     <string name="app_name">UMADEP</string>
-    <string name="CodePushDeploymentKey">my-code-push-key</string>
 </resources>
