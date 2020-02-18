@@ -29,6 +29,10 @@ export default function Home({navigation}) {
         message,
       });
 
+      setSentBy('');
+      setReceivedBy('');
+      setMessage('');
+
       Alert.alert('Recadinho enviado!');
     }
   }
