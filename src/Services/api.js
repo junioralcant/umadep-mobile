@@ -2,7 +2,7 @@ import axios from 'axios';
 import AsyncStorage from '@react-native-community/async-storage';
 
 const api = axios.create({
-  baseURL: 'https://api-umadep.herokuapp.com',
+  baseURL: 'http://umadep-com.umbler.net',
 });
 
 api.interceptors.request.use(async config => {
