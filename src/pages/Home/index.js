@@ -5,6 +5,7 @@ import {
   TextInput,
   TouchableOpacity,
   Alert,
+  ActivityIndicator,
 } from 'react-native';
 
 import LinearGradient from 'react-native-linear-gradient';
@@ -18,11 +19,13 @@ export default function Home({navigation}) {
   const [receivedBy, setReceivedBy] = useState('');
   const [message, setMessage] = useState('');
   const [error, setError] = useState('');
+  const [loading, setLoading] = useState(false);
 
   async function handlerSubmit() {
     if (!sentBy || !receivedBy || !message) {
       setError('Preencha todos os campos!');
     } else {
+      setLoading(true);
       await api.post('/messags', {
         sentBy,
         receivedBy,
@@ -34,6 +37,7 @@ export default function Home({navigation}) {
       setMessage('');
 
       Alert.alert('Recadinho enviado!');
+      setLoading(false);
     }
   }
 
@@ -50,6 +54,7 @@ export default function Home({navigation}) {
       </Text>
       {error !== 0 && <Text style={styles.error}>{error}</Text>}
       <Content>
+        {loading && <ActivityIndicator color="#650986" />}
         <TextInput
           style={styles.input}
           placeholderTextColor="#FFF"
