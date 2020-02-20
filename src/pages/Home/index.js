@@ -53,8 +53,8 @@ export default function Home({navigation}) {
         Deixe seu recado
       </Text>
       {error !== 0 && <Text style={styles.error}>{error}</Text>}
+
       <Content>
-        {loading && <ActivityIndicator color="#650986" />}
         <TextInput
           style={styles.input}
           placeholderTextColor="#FFF"
@@ -77,9 +77,17 @@ export default function Home({navigation}) {
           value={message}
           onChangeText={setMessage}
         />
-        <TouchableOpacity onPress={handlerSubmit} style={styles.button}>
-          <Text style={{color: '#FFF'}}>ENVIAR</Text>
-        </TouchableOpacity>
+        {loading ? (
+          <ActivityIndicator
+            style={styles.loading}
+            size="large"
+            color="#650986"
+          />
+        ) : (
+          <TouchableOpacity onPress={handlerSubmit} style={styles.button}>
+            <Text style={{color: '#FFF'}}>ENVIAR</Text>
+          </TouchableOpacity>
+        )}
       </Content>
     </LinearGradient>
   );
@@ -141,5 +149,9 @@ const styles = StyleSheet.create({
     marginTop: 25,
     justifyContent: 'center',
     alignItems: 'center',
+  },
+
+  loading: {
+    marginTop: 30,
   },
 });
